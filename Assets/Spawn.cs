@@ -20,7 +20,7 @@ public class Spawn : MonoBehaviour
     void update()
     {
         Timer2 -= Time.deltaTime;
-        if(TimeBool = true)
+        if(TimeBool == true)
         {
             Wave_num -= -1;
             Prespawn();
@@ -28,7 +28,7 @@ public class Spawn : MonoBehaviour
         if(TriggerBool == true)
         {
             Debug.Log("Trigwork");
-            if(TimeBool = false)
+            if(TimeBool == false)
             {
                 Debug.Log("Timework");
                 Timer -= Time.deltaTime;
@@ -82,15 +82,19 @@ public class Spawn : MonoBehaviour
             if(Timer2 <= 0)
             {
                 Debug.Log("Collision.Spawn.Player");
-                Timer2 = 1.0f;
                 if(TriggerBool == false)
                 {
+                    Debug.Log("TrigTrue");
                     TriggerBool = true;
+                    update();
                 }
-                if(TriggerBool == true)
+                else if(TriggerBool == true)
                 {
+                    Debug.Log("TrigFalse");
                     TriggerBool = false;
+                    update();
                 }
+                Timer2 = 0.1f;
             }
         }
     }
