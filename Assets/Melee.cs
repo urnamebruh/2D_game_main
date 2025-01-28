@@ -7,6 +7,7 @@ public class melee : MonoBehaviour
     public Enemy_HP EH;
 
     public Transform m_transform;
+    public Transform BruteForce;
 
     private void LAMouse()
     {
@@ -18,6 +19,7 @@ public class melee : MonoBehaviour
     }
     void Update()
     {
+        this.transform.position = BruteForce.position;
         LAMouse();
     }
 }

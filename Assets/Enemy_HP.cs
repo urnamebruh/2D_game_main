@@ -30,10 +30,9 @@ public class Enemy_HP : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision");
         if(collision.gameObject == BruteForce)
         {
-            Debug.Log("Enemy_Hit");
+            Debug.Log("Enemy_Hit_Sword");
             TakeDamage(1);
         }
         else if(collision.gameObject.CompareTag("Boolet"))
