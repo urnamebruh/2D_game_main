@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -1655147720791196705}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Boolet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,6 +168,7 @@ MonoBehaviour:
   MaxSpeed: 1
   moveSpeed: 0.015
   EH: {fileID: 0}
+  EH2: {fileID: 0}
 --- !u!198 &-7902065022988921356
 ParticleSystem:
   m_ObjectHideFlags: 0

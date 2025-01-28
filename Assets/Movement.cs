@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public GameObject bulletPrefab;
+    Rigidbody2D rb2d;
+
+    public Transform m_transform;
+    public Transform B_transform;
     public Transform firePointRotation;
     public Transform bulletSpawnPoint;
-    public Transform m_transform;
-    public float bulletSpeed = 0f;
-    Rigidbody2D rb2d;
-    public float moveSpeed = 5f;
-    public GameObject m_GO;
+
+    public GameObject bulletPrefab;
+    public GameObject sword;
+    public GameObject wand;
+    GameObject m_GO;
+
+    public float bulletSpeed = 2.0f;
+    public float moveSpeed = 5.0f;
+    public float targetTime = 4.0f;
+
+    int AttackNum = 0;
+
+    bool abc = true;
+    bool xyz = true;
+    bool MAttack = true;
     
 
     void Start()
@@ -26,39 +39,74 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-      float moveInputX = Input.GetAxisRaw("Horizontal"); // For horizontal movement (left/right)
-      float moveInputY = Input.GetAxisRaw("Vertical");   // For vertical movement (up/down)
-      // Normalise the vector so that we don't move faster when moving diagonally.
+      targetTime -= Time.deltaTime;
+      if (targetTime <= 0.0f)
+      {
+          abc = true;
+          xyz = true;
+      }
+      if (Input.GetKeyDown(KeyCode.Alpha1))
+      {
+          Debug.Log("A1");
+          AttackNum = 1;
+          sword.SetActive(true);
+          wand.SetActive(false);
+      }
+      if (Input.GetKeyDown(KeyCode.Alpha2))
+      {
+          AttackNum = 2;
+          sword.SetActive(false);
+          wand.SetActive(true);
+      }
+      if (Input.GetButtonDown("Fire1"))
+      {
+        Attack();
+      }
+      if (abc == false)
+      {
+          if (xyz == true)
+          {
+            targetTime = 4.0f;
+            xyz = false;
+          }
+      }
+      float moveInputX = Input.GetAxisRaw("Horizontal");
+      float moveInputY = Input.GetAxisRaw("Vertical");
       Vector2 moveDirection = new Vector2(moveInputX, moveInputY);
       moveDirection.Normalize();
 
-      // Assign velocity directly to the Rigidbody
       rb2d.velocity = moveDirection * moveSpeed;
     }
-
-    void RotateBulletSpawnPointTowardsMouse()
-    {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f;
-        Vector2 direction = (mousePosition - firePointRotation.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        firePointRotation.rotation = Quaternion.Euler(new Vector3(0,0, angle));
-    }
-    void LAMouse()
-    {
-      Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_transform.position;
-      float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-      Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-    }
-
-    void Shoot()
+      void Shoot()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        B_transform.rotation = rotation;
+
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, firePointRotation.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.velocity = firePointRotation.right * bulletSpeed;
         Destroy(bullet, 5f);
+    }
+    void Melee()
+    {
+        MAttack = true;
+    }
+
+    void Attack()
+    {
+        if(AttackNum==1)
+        {
+            Melee();
+        }
+        if(AttackNum==2)
+        {
+            if(abc == true)
+            {
+                Shoot();
+                abc = false;
+            }            
+        }
     }
 }

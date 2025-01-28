@@ -39,13 +39,4 @@ public class Boolet : MonoBehaviour
     {
         rb.MovePosition(position);
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            EH2 = FindObjectOfType<Enemy_HP>();
-            Debug.Log("Enemy_Hit");
-            EH2.TakeDamage(1);
-        }
-    }
 }
