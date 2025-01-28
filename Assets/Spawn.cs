@@ -13,65 +13,74 @@ public class Spawn : MonoBehaviour
     int LWave = 0;
 
     float Timer = 3.0f;
-    float Timer2 = 0.0f;
+    float Timer2 = 3.0f;
     bool TriggerBool = false;
     bool TimeBool = false;
+    bool TimeBool2 = false;
+    bool SpawnBool = false;
 
     void update()
     {
-        Timer2 -= Time.deltaTime;
-        if(TimeBool == true)
-        {
-            Wave_num -= -1;
-            Prespawn();
-        }
-        if(TriggerBool == true)
-        {
-            Debug.Log("Trigwork");
-            if(TimeBool == false)
-            {
-                Debug.Log("Timework");
-                Timer -= Time.deltaTime;
-            }
-        }
+        Debug.Log(Timer);
+        Timer -= Time.deltaTime;
+        Debug.Log(Timer);
         if(Timer <= 0.0f)
         {
             TimeBool = true;
+            Timer = Timer2;
+            Debug.Log("TimerWork?");
         }
-
-        if(Wave_num > LWave)
+        if(TriggerBool == true)
         {
-            SpawnV();
+            if(TimeBool == false)
+            {
+                TimeBool = true;
+            }
+        }
+        if(TimeBool == true)
+        {
+            Debug.Log("TimeBool == true!!!");
+            Wave_num -= -1;
+            SpawnBool = true;
+        }
+        if(SpawnBool == true)
+        {
+            Prespawn();
+            SpawnBool = false;
         }
     }
     void Prespawn()
     {
-        Debug.Log("PreWaveCheck");
-        Spawn_num = Wave_num;
-        Spawned_num = Spawn_num;
+        Debug.Log("Prespawn");
+        Spawn_num = Wave_num + 1;
+        Spawned_num = 0;
         SpawnV();
     }
     void SpawnV()
     {
-        Debug.Log("WaveCheck");
+        Debug.Log("Spawn");
         if(TimeBool == true)
         {
+            Debug.Log("Spawn2");
             if(Spawn_num > Spawned_num)
             {
+                Debug.Log("Spawn3");
                 Instantiate(ToSpawn, spawnPoint.position, spawnPoint.rotation);
                 Spawned_num -= -1;
             }
             else
             {
+                Debug.Log("PostSpawn");
                 Postspawn();
             }
         }
     }
     void Postspawn()
     {
-        Timer = 3.0f;
         TimeBool = false;
         LWave = Wave_num;
+        Wave_num -= -1;
+        Timer = Timer2;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -79,22 +88,16 @@ public class Spawn : MonoBehaviour
         Debug.Log("Collision.Spawn");
         if(collision.gameObject.CompareTag("Player"))
         {
-            if(Timer2 <= 0)
+            Debug.Log("Collision.Spawn.Player");
+            if(TriggerBool == false)
             {
-                Debug.Log("Collision.Spawn.Player");
-                if(TriggerBool == false)
-                {
-                    Debug.Log("TrigTrue");
-                    TriggerBool = true;
-                    update();
-                }
-                else if(TriggerBool == true)
-                {
-                    Debug.Log("TrigFalse");
-                    TriggerBool = false;
-                    update();
-                }
-                Timer2 = 0.1f;
+                Debug.Log("TrigTrue");
+                TriggerBool = true;
+            }
+            else if(TriggerBool == true)
+            {
+                Debug.Log("TrigFalse");
+                TriggerBool = false;
             }
         }
     }
