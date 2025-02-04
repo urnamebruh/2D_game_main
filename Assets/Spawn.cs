@@ -11,9 +11,15 @@ public class Spawn : MonoBehaviour
     float MSI = 2f;
     float intD = 0.1f;
 
-    void start()
+    bool Start = true;
+
+    void update()
     {
-        StartCoroutine(SpawnEnemies());
+        if(Start == true)
+        {
+            StartCoroutine(SpawnEnemies());
+            Start = false;
+        }
     }
 
     IEnumerator SpawnEnemies()
