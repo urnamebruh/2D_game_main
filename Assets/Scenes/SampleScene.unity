@@ -260,6 +260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &11892708
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -328,8 +330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &25577949
 GameObject:
   m_ObjectHideFlags: 0
@@ -5556,6 +5558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &368915904
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5624,8 +5628,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &426823193
 GameObject:
   m_ObjectHideFlags: 0
@@ -8596,6 +8600,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &681446682
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8664,8 +8670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &744630406
 GameObject:
   m_ObjectHideFlags: 0
@@ -8732,8 +8738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!60 &762947456
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8803,6 +8809,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!114 &762947458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9041,6 +9049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &811433857
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9109,8 +9119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &840024913
 GameObject:
   m_ObjectHideFlags: 0
@@ -9248,6 +9258,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &840024920
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9316,8 +9328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &854620948
 GameObject:
   m_ObjectHideFlags: 0
@@ -9455,6 +9467,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &854620955
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9523,8 +9537,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &923907377
 GameObject:
   m_ObjectHideFlags: 0
@@ -10479,6 +10493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &1486557007
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10547,8 +10563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &1527616038
 GameObject:
   m_ObjectHideFlags: 0
@@ -10732,6 +10748,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &1531477541
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10800,8 +10818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &1635845664
 GameObject:
   m_ObjectHideFlags: 0
@@ -10939,6 +10957,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  Comms: 0
+  Attacking: 0
 --- !u!60 &1635845671
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11007,8 +11027,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
-  firePointRotation: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  Rotation: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!1 &1798631426
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,20 +6,25 @@ public class Enemy1 : MonoBehaviour
 {
     bool ABC = false;
     public GameObject Goat;
-    public Transform firePointRotation;
-    public Transform bulletSpawnPoint;
+    public Transform Rotation;
+    public Transform SpawnPoint;
 
-    void update()
+
+    void Update()
     {
+        Debug.Log("W2");
         if(ABC == true)
         {
-            GameObject enemy = Instantiate(Goat, bulletSpawnPoint.position, firePointRotation.rotation);
+            SpawnPoint = transform;
+            Debug.Log("W3");
+            GameObject enemy = Instantiate(Goat, SpawnPoint.position, SpawnPoint.rotation);
             Destroy(gameObject);
+            ABC = false;
         }
     }
-    private void OnParticleCollision(GameObject other)
+    public void OnParticleCollision(GameObject other)
     {
         ABC = true;
-        Debug.Log("bruh");
+        Debug.Log("W1");
     }
 }
