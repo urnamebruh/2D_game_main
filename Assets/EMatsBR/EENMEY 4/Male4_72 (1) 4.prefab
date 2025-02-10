@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5394034599476884854}
   - component: {fileID: 8029196994112625173}
   - component: {fileID: 5026642256826937043}
+  - component: {fileID: 3135750802398687011}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2100000, guid: 6714542c61991624dbd2ae61b46b988a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,6 +119,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a4a4ab898ceec4784d71187f933c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3135750802398687011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292521606162085382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03680df39b07b0b488c87b29b903e1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMaterial: {fileID: 0}
+  alpha: 1
 --- !u!1 &7479825865394333446
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +148,7 @@ GameObject:
   - component: {fileID: 7965911158592333560}
   - component: {fileID: 233366617685688916}
   m_Layer: 0
-  m_Name: Male4_72 (1)
+  m_Name: Male4_72 (1) 4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,5 +305,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 0}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0

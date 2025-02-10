@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackTrigger : MonoBehaviour
 {
     public bool attack = false;
+    Bruteforce BR;
     void OnTriggerEnter2D(Collider2D trigger)
     {
         if(trigger.gameObject.CompareTag("Player"))
@@ -17,6 +18,13 @@ public class AttackTrigger : MonoBehaviour
         if(trigger.gameObject.CompareTag("Player"))
         {
             attack = false;
+        }
+    }
+    void update()
+    {
+        BR = GetComponent<Bruteforce>();
+        if(attack == true)
+        {
         }
     }
 }

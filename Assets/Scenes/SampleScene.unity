@@ -260,6 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &11892708
@@ -4358,7 +4359,7 @@ ParticleSystem:
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
-    maxCollisionShapes: 3
+    maxCollisionShapes: 10000
     quality: 0
     voxelSize: 0.5
     collisionMessages: 1
@@ -5558,6 +5559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &368915904
@@ -8600,6 +8602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &681446682
@@ -8809,6 +8812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!114 &762947458
@@ -9049,6 +9053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &811433857
@@ -9258,6 +9263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &840024920
@@ -9467,6 +9473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &854620955
@@ -9536,7 +9543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a33eb58d12390498a78f000501f9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Goat: {fileID: 7479825865394333446, guid: ef1b9bbe312937c44a57b482d882cf34, type: 3}
+  Goat: {fileID: 7479825865394333446, guid: 955e6b9a949ccbe44bd325aa288d92af, type: 3}
   Rotation: {fileID: 0}
   SpawnPoint: {fileID: 0}
 --- !u!1 &923907377
@@ -10493,6 +10500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &1486557007
@@ -10748,6 +10756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &1531477541
@@ -10957,6 +10966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 1140559610}
   maxHealth: 2
+  alpha: 1
   Comms: 0
   Attacking: 0
 --- !u!60 &1635845671

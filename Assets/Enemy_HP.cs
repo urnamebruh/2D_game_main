@@ -12,6 +12,8 @@ public class Enemy_HP : MonoBehaviour
     int Difficulty = 1;
     int AV;
 
+    public float alpha = 1f;
+
     AttackTrigger AT;
 
     float Timer1 = 0.15f;
@@ -25,13 +27,22 @@ public class Enemy_HP : MonoBehaviour
     void Update()
     {
         AT = GetComponent<AttackTrigger>();
-        if(AT.attack == true)
+        if(alpha >= 0f)
+        {
+            alpha -= 0.05f;
+        }
+        if(AT.attackR == true)
         {
             Attack();
+            if(alpha <= 0.25f)
+            {
+                alpha -= -0.1f;
+            }
         }
     }
     void Start()
     {
+        
         Damage = 1 * Difficulty;
         currentHealth = maxHealth;
     }
