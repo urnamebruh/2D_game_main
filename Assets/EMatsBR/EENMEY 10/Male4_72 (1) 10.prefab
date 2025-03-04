@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMaterial: {fileID: 0}
   alpha: 1
+  AT: {fileID: 0}
 --- !u!1 &7479825865394333446
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ GameObject:
   - component: {fileID: 7965911158592333560}
   - component: {fileID: 233366617685688916}
   m_Layer: 0
-  m_Name: Male4_72 (1) 11
+  m_Name: Male4_72 (1) 10
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,6 +306,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BruteForce: {fileID: 0}
   maxHealth: 2
+  AV: 1
   alpha: 1
-  Comms: 0
+  yap: 0
+  AComms: 0
   Attacking: 0
+  Attack: 0
+  Tim: 1
+  AT: {fileID: 0}
+  PS: {fileID: 0}

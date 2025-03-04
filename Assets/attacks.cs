@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class attacks : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Movement PS;
+    Enemy_HP EH;
+    void OnTriggerEnter2D(Collider2D trigger)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //rotate
+        EH = GetComponent<Enemy_HP>();
+        if(EH.AComms == true)
+        {
+            Debug.Log("wprk");
+            if(trigger.gameObject.CompareTag("Player"))
+            {
+                PS = GetComponent<Movement>();
+                PS.dam = EH.AV;
+                EH.AComms = false;
+            }
+        }
     }
 }

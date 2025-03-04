@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
     public float targetTime = 4.0f;
 
     int AttackNum = 0;
+    public int dam = 0;
+    public int Health = 10;
 
     bool abc = true;
     bool xyz = true;
@@ -39,6 +41,18 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+      if(Health <= 0)
+      {
+        Debug.Log("Player_DEAD");
+      }
+      Debug.Log(Health);
+      Debug.Log(dam); 
+      if (dam >= 0)
+      {
+        Health -= dam;
+        dam = 0;
+      }
+
       targetTime -= Time.deltaTime;
       if (targetTime <= 0.0f)
       {

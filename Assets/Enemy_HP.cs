@@ -10,39 +10,39 @@ public class Enemy_HP : MonoBehaviour
     int currentHealth;
     int Damage = 1;
     int Difficulty = 1;
-    int AV;
+    public int AV = 1;
 
     public float alpha = 1f;
 
-    AttackTrigger AT;
-
     float Timer1 = 0.15f;
     bool TimBool1 = false;
-    float Timer2 = 0.5f;
     bool TimBool2 = false;
 
-    public bool Comms = false;
+
+    public bool yap = false;
+    public bool AComms = false;
     public bool Attacking = false;
+    public bool Attack = false;
+    public bool Tim = true;
+
+    public AttackTrigger AT;
+    public Movement PS;
 
     void Update()
     {
-        AT = GetComponent<AttackTrigger>();
-        if(alpha >= 0f)
+        if(Attack == true)
         {
-            alpha -= 0.05f;
+            attack();
         }
-        if(AT.attackR == true)
+        if(Attacking == true)
         {
-            Attack();
-            if(alpha <= 0.25f)
-            {
-                alpha -= -0.1f;
-            }
+            Attack = false;
+            AComms = true;
         }
     }
+
     void Start()
     {
-        
         Damage = 1 * Difficulty;
         currentHealth = maxHealth;
     }
@@ -64,12 +64,21 @@ public class Enemy_HP : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Attack = true;
+            if(Attacking == true)
+            {
+                collision.gameObject.GetComponent<Movement>().dam = 1;
+                Attacking = false;
+            }
+        }
         if(collision.gameObject == BruteForce)
         {
             Debug.Log("Enemy_Hit_Sword");
             TakeDamage(1);
         }
-        else if(collision.gameObject.CompareTag("Boolet"))
+        if(collision.gameObject.CompareTag("Boolet"))
         {
             Debug.Log("Enemy_Hit");
             TakeDamage(1);
@@ -77,40 +86,16 @@ public class Enemy_HP : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            if(Attacking == true)
-            {
-                AV = Damage;
-                Comms = true;
-            }
-        }
     }
-    void Attack()
+    void attack()
     {
-        AT = GetComponent<AttackTrigger>();
-        if(TimBool2 == false)
-        {
-            Timer2 = 0.35f;
-        }
-        if(TimBool2 == true)
-        {
-            Timer1 = 0.15f;
-            Timer2 -= Time.deltaTime;
-        }
-        if(TimBool1 == true)
-        {
-            Timer1 -= Time.deltaTime;
-        }
+        Timer1 -= Time.deltaTime;
         if(Timer1 <= 0.0f)
         {
             Attacking = true;
             TimBool2 = false;
             TimBool1 = false;
-        }
-        if(Timer2 <= 0.0f)
-        {
-            TimBool2 = true;
+            Timer1 = 0.5f;
         }
     }
 }

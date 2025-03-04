@@ -4,27 +4,46 @@ using UnityEngine;
 
 public class AttackTrigger : MonoBehaviour
 {
-    public bool attack = false;
-    Bruteforce BR;
+    public bool Attack = false;
+
+    public float Difficulty = 1.0f;
+    public float Timer = 0f;
+
+    public Enemy_HP EH;
+    public Movement PS;
+
     void OnTriggerEnter2D(Collider2D trigger)
     {
         if(trigger.gameObject.CompareTag("Player"))
         {
-            attack = true;
+            if(Timer <= 0)
+            {
+                EH.AComms = false;
+                EH.yap = false;
+                Debug.Log("attack_Triggered");
+                Timer = 1*Difficulty;
+            }
         }
     }
+
+    void OnTriggerStay2D(Collider2D trigger)
+    {
+        if(trigger.gameObject.CompareTag("Enemy"))
+        EH = trigger.gameObject.GetComponent<Enemy_HP>();
+    }
+
     void OnTriggerExit2D(Collider2D trigger)
     {
         if(trigger.gameObject.CompareTag("Player"))
         {
-            attack = false;
+            Attack = false;
         }
     }
-    void update()
+    void Update()
     {
-        BR = GetComponent<Bruteforce>();
-        if(attack == true)
+        if(Attack == true)
         {
         }
+        Timer -= Time.deltaTime;
     }
 }

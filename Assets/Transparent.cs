@@ -9,29 +9,31 @@ public class Transparent : MonoBehaviour
     [Range(0f,1f)]
 
     public float alpha = 1f;
-    public GameObject BruteForce;
 
-
-    Enemy_HP EH;
-    MeshRenderer meshRenderer;
-    void Start()
-    {
-    }
-
+    public AttackTrigger AT;
+    
     // Update is called once per frame
     void Update()
     {
-        EH = GetComponent<Enemy_HP>();
-        alpha = EH.alpha;
-        if(alpha <= 0f)
+        Debug.Log(AT.Attack);
+        // Colour Controller
+        if(alpha >= 0.5f)
         {
-            alpha = 0f;
+            alpha -= Time.deltaTime/100;
         }
+        if(AT.Attack == true)
+        {
+            if(alpha <= 0.25f)
+            {
+                alpha -= -Time.deltaTime*4;
+            }
+        }
+        
+        // Machine
         if(alpha >= 1f)
         {
             alpha = 1f;
         }
-        myMaterial = GetComponent<MeshRenderer>().material;
-        Color transparentColor = new Color(myMaterial.color.r, myMaterial.color.g, myMaterial.color.b, alpha);
+        myMaterial.color = new Color(myMaterial.color.r, myMaterial.color.g, myMaterial.color.b, alpha);
     }
 }
