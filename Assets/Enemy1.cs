@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Enemy1 : MonoBehaviour
 {
-    bool ABC = false;
+    public bool ABC = false;
     public GameObject Goat;
     public Transform Rotation;
     public Transform SpawnPoint;
+    public Transparent RK;
 
 
     void Update()

@@ -7,7 +7,8 @@ public class Transparent : MonoBehaviour
     public Material myMaterial;
 
     [Range(0f,1f)]
-
+    
+    float Timer1 = 1.5f;
     public float alpha = 1f;
 
     public AttackTrigger AT;
@@ -15,25 +16,13 @@ public class Transparent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(AT.Attack);
-        // Colour Controller
-        if(alpha >= 0.5f)
-        {
-            alpha -= Time.deltaTime/100;
-        }
-        if(AT.Attack == true)
-        {
-            if(alpha <= 0.25f)
-            {
-                alpha -= -Time.deltaTime*4;
-            }
-        }
-        
-        // Machine
-        if(alpha >= 1f)
+        Timer1 -= Time.deltaTime;
+        if(Timer1 <=0)
         {
             alpha = 1f;
+            Timer1 = 1.5f;
         }
+        alpha -= Time.deltaTime;
         myMaterial.color = new Color(myMaterial.color.r, myMaterial.color.g, myMaterial.color.b, alpha);
     }
 }
