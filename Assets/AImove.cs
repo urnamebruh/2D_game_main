@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AImove : MonoBehaviour
 {
     NavMeshAgent agent;
-    GameObject player;
+    public GameObject player;
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
