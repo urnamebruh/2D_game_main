@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Boolet
   - SD
+  - TrigTag
   layers:
   - Default
   - TransparentFX
