@@ -13,7 +13,6 @@ public class Enemy1 : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("W2");
         if(ABC == true)
         {
             SpawnPoint = transform;
